@@ -116,13 +116,13 @@ No setup, inicializamos a comunicação serial, configuramos os pinos dos LEDs e
 void setup() {
   Serial.begin(9600); // Inicializa a comunicação serial
   sensors.begin(); // Inicializa o sensor DS18B20
+  pinMode(buzzerPin, OUTPUT); // Configura o pino do buzzer como saída
 
   //Inicializando o LCD 
   lcd.init();
   lcd.backlight();
   lcd.clear();
 
-  pinMode(buzzerPin, OUTPUT); // Configura o pino do buzzer como saída
   for (int i = 0; i < 3; i++) {
     pinMode(ledPins[i], OUTPUT); // Configura os pinos dos LEDs como saída
     digitalWrite(ledPins[i], LOW); // Inicialmente desliga todos os LEDs
@@ -135,7 +135,6 @@ No loop principal, lemos os sensores, armazenamos os valores em arrays, calculam
 ```
 void loop() {
   readSensors(); // Lê os valores dos sensores e armazena nas respectivas listas
-
   currentIndex = (currentIndex + 1) % 10; // Incrementa o índice e o reseta se necessário
   numReadings = min(numReadings + 1, 10); // Incrementa numReadings até o máximo de 10
 
@@ -198,8 +197,31 @@ VOID -> Verifica as médias atualizadas e atualiza as variáveis de status do Bu
 ```
 void updateStatus() {
   // Armazena os resultados da verificação em variáveis locais
-  bool temperatureOutOfRange = (avgReadings[0] < 18.0 || avgReadings[0] > 28.0);
-  bool pHOutOfRange = (avgReadings[1] < 7.4 || avgReadings[1] > 8.5);
+  bool highTemp = (avgReadings[0] > 24.0);
+  bool lowTemp = (avgReadings[0] < 18.0);
+
+  bool highPH = (avgReadings[1] > 8.5);
+  bool lowPH = (avgReadings[1] < 7.4);
+
+  // Define as mensagem de temperatura e pH do LCD
+  if (highTemp){
+    statusLCD[0] = "Alto";
+  }else if (lowTemp){
+    statusLCD[0] = "Baixo";
+  } else {
+    statusLCD[0] = "OK";
+  }
+
+  if (highPH){
+    statusLCD[1] = "Alto";
+  }else if (lowPH){
+    statusLCD[1] = "Baixo";
+  } else {
+    statusLCD[1] = "OK";
+  }
+
+  bool temperatureOutOfRange = (highTemp || lowTemp);
+  bool pHOutOfRange = (highPH || lowPH);
 
   // Desliga todos os LEDs antes de ligar o correto
   for (int i = 0; i < 3; i++) {
@@ -210,30 +232,16 @@ void updateStatus() {
     // Condição extrema: ambos os parâmetros fora dos limites
     condition = 1;
     digitalWrite(ledPins[2], HIGH); // Liga o LED vermelho
-    // Define as mensagem de temperatura e pH do LCD, respectivamente
-    statusLCD[0] = "Critico";
-    statusLCD[1] = "Critico";
 
   } else if (temperatureOutOfRange || pHOutOfRange) {
     // Condição ruim: pelo menos um dos parâmetros fora dos limites
     condition = 0;
     digitalWrite(ledPins[1], HIGH); // Liga o LED amarelo
-    // Define as mensagem de temperatura e pH do LCD, respectivamente
-    if (temperatureOutOfRange) {
-      statusLCD[0] = "Critico";
-      statusLCD[1] = "OK";
-    } else {
-      statusLCD[0] = "OK"; 
-      statusLCD[1] = "Critico";
-    }
 
   } else {
     // Condição normal: ambos os parâmetros dentro dos limites
     condition = -1;
     digitalWrite(ledPins[0], HIGH); // Liga o LED verde
-    // Define as mensagem de temperatura e pH do LCD, respectivamente
-    statusLCD[0] = "OK"; 
-    statusLCD[1] = "OK";
   }
 }
 ```
@@ -250,7 +258,6 @@ void soundBuzzer(){
       tone(buzzerPin, 500, 100); // Som para condições ruins
       break;
     default:
-      noTone(buzzerPin); // Sem som para condições normais/não verificadas
       delay(100);
       break;
   }
@@ -279,7 +286,7 @@ void updateLCD(){
     lcd.write(byte(0));
     lcd.print("C");
 
-    if (statusLCD[0].equals("Critico")){
+    if (!(statusLCD[0].equals("OK"))){
       showLCD(2, "-> "+statusLCD[0]);
       showLCD(3, "pH: " + String(avgReadings[1], 2)+" - "+statusLCD[1]);
     } else {

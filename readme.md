@@ -28,8 +28,8 @@ Este projeto monitora a temperatura e o pH de um ambiente utilizando um sensor D
 
 ## Simulação
 <a href="https://wokwi.com/projects/399438925654312961" target="_blank" style="text-decoration: none">
-   <img src="./img/circuito.png">
-   <p>Wokwi</p>
+<h2>Wokwi</h2>
+<img src="./img/circuito.png">
 </a>
 
 ## Componentes Usados

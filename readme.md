@@ -4,7 +4,7 @@ Este projeto monitora a temperatura e o pH de um ambiente utilizando um sensor D
 
 ## Simulação
 
-<a href="https://wokwi.com/projects/399438925654312961" target="_blank"><h2>Wokwi</h2></a>
+<h2><a href="https://wokwi.com/projects/399438925654312961" target="_blank">Wokwi</a></h2>
 
 ## Componentes Usados
 
@@ -207,14 +207,14 @@ void loop() {
 ## Colaboradores do Projeto
 <div>
 
-<a href="https://github.com/dav0fc" target="_blank" style="text-align: center; margin-right: 10px;">
-<img loading="lazy" src="https://avatars.githubusercontent.com/dav0fc" width=120>
-<p style="font-size:min(2vh, 36px); margin-top: 10px;">	David Gabriel Gomes Fernandes - RM 556020</p>
-</a>
-
 <a href="https://github.com/desenise" target="_blank" style="text-align: center; margin-right: 10px;">
 <img loading="lazy" src="https://avatars.githubusercontent.com/desenise" width=120>
 <p style="font-size:min(2vh, 36px); margin-top: 10px;">Denise Senise - RM 556006</p>
+</a>
+
+<a href="https://github.com/dav0fc" target="_blank" style="text-align: center; margin-right: 10px;">
+<img loading="lazy" src="https://avatars.githubusercontent.com/dav0fc" width=120>
+<p style="font-size:min(2vh, 36px); margin-top: 10px;">	David Gabriel Gomes Fernandes - RM 556020</p>
 </a>
 
 <a href="https://github.com/MateusLem" target="_blank" style="text-align: center; margin-right: 10px;">

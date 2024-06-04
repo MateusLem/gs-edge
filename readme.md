@@ -3,8 +3,7 @@
 Este projeto monitora a temperatura e o pH de um ambiente utilizando um sensor DS18B20 e um sensor de pH. Os dados são processados e armazenados em arrays, sendo transmitidos em formato JSON via comunicação serial para um aplicativo Python. LEDs e um buzzer são usados para indicar o estado das leituras.
 
 ## Simulação
-
-<h2><a href="https://wokwi.com/projects/399438925654312961" target="_blank">Wokwi</a></h2>
+<h3><a href="https://wokwi.com/projects/399438925654312961" target="_blank">Wokwi</a></h3>
 
 ## Componentes Usados
 

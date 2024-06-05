@@ -36,7 +36,7 @@ Monitoramento de Temperatura e PH com Arduino foi construído utilizando um sens
 
 ## Componentes Usados
 
-**_DISCLAIMER: Como não há o sensor de pH no simulador Wokwi, estamos simulando seu funcionamento com um potênciometro._**
+**_DISCLAIMER: Como não há o sensor de PH no simulador Wokwi, estamos simulando seu funcionamento com um potênciometro._**
 
 - Arduino Uno (ou equivalente)
 - Sensor de Temperatura DS18B20

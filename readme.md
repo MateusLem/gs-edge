@@ -2,9 +2,7 @@
 
 Mudar o mindset das novas gerações, para que estas possam mudar o mundo: esse é o propósito do nosso projeto que tem como missão informar e alertar sobre os perigos de negligenciar o Oceano. Cuidar deste é o nosso dever como ser humano. O nosso projeto consiste em uma plataforma de informações com artigos, informações e um dashboard de monitoramento, no qual será demonstrado medições feitas através de sensores, informando em tempo real dados sobre o Ph da água e  a temperatura. Pretendemos com essa plataforma, informar sobre os riscos de não cuidar desse bem precioso, sugerir soluções e monitorá-lo!
 
-Monitoramento de Temperatura e pH com Arduino
-
-O monitoramento da temperatura e PH foi construído utilizando um sensor DS18B20 e um sensor de pH. Os dados são processados e armazenados em arrays, transmitidos em formato JSON via comunicação serial para um aplicativo Python. LEDs e buzzer são usados para indicar o estado das leituras.
+Monitoramento de Temperatura e PH com Arduino foi construído utilizando um sensor DS18B20 e um sensor de pH. Os dados são processados e armazenados em arrays, transmitidos em formato JSON via comunicação serial para um aplicativo Python. LEDs e buzzer são usados para indicar o estado das leituras.
 
 ## Índice
 

@@ -1,22 +1,26 @@
 # Projeto Blue Reckon 
 
-Mudar o mindset das novas gerações, para que estas possam mudar o mundo: esse é o propósito do nosso projeto que tem como missão informar e alertar sobre os perigos de negligenciar o Oceano. Cuidar deste é o nosso dever como ser humano. O nosso projeto consiste em uma plataforma de informações com artigos, informações e um dashboard de monitoramento, no qual será demonstrado medições feitas através de sensores, informando em tempo real dados sobre o Ph da água e  a temperatura. 
 
-Monitoramento de Temperatura e PH com Arduino foi construído utilizando um sensor DS18B20 e um sensor de PH. Os dados são processados e armazenados em arrays, transmitidos em formato JSON via comunicação serial para um aplicativo Python. LEDs e buzzer são usados para indicar o estado das leituras.
 
-Pretendemos com essa plataforma, informar sobre os riscos de não cuidar do nosso bem precioso, o oceano, monitorá-lo e sugerir soluções, como o armazenamento de dados históricos para identificar padrões e prever futuras condições, ajudando a prevenir superaquecimento e danos, pois transformam dados brutos em informações acionáveis, melhorando a tomadas de decisões.
+
+
+
 
 ## Índice
 
-1. [Simulação](#simulação)
-2. [Componentes Usados](#componentes-usados)
-3. [Método de Montagem](#método-de-montagem)
+1. [Sobre](#sobre)
+   - [Nosso Projeto](#nosso-projeto)
+   - [Nossa Proposta](#nosso-projeto)
+   - [Nosso Objetivo](#nosso-objetivo)
+2. [Simulação](#simulação)
+3. [Componentes Usados](#componentes-usados)
+4. [Método de Montagem](#método-de-montagem)
    - [Conecte o Sensor DS18B20](#sensor-ds18b20)
    - [Conecte o Sensor de pH](#sensor-de-ph)
    - [Conecte os LEDs](#leds)
    - [Conecte o Buzzer](#buzzer)
    - [Conecte o LCD](#lcd)
-4. [Explicação do Código](#explicação-do-código)
+5. [Explicação do Código](#explicação-do-código)
    - [Bibliotecas](#bibliotecas)
    - [Declarações](#declarações)
    - [Configuração Inicial](#configuração-inicial)
@@ -28,7 +32,20 @@ Pretendemos com essa plataforma, informar sobre os riscos de não cuidar do noss
    - [updateLCD](#updatelcd)
    - [showLCD](#showlcd)
    - [generateJSON](#generatejson)
-5. [Colaboradores do Projeto](#colaboradores-do-projeto)
+6. [Colaboradores do Projeto](#colaboradores-do-projeto)
+
+## Sobre
+<a href="https://youtu.be/VSMa45d5Das?si=ktKmnKgCoL5rEsu8" target="_blank" style="text-decoration: none"><img src="./img/thumb.jpg"></a>
+
+
+### Nosso Projeto
+Monitoramento de Temperatura e PH com Arduino foi construído utilizando um sensor DS18B20 e um sensor de PH. Os dados são processados e armazenados em arrays, transmitidos em formato JSON via comunicação serial para um aplicativo Python. LEDs e buzzer são usados para indicar o estado das leituras.
+
+### Nossa Proposta
+Pretendemos com essa plataforma, informar sobre os riscos de não cuidar do nosso bem precioso, o oceano, monitorá-lo e sugerir soluções, como o armazenamento de dados históricos para identificar padrões e prever futuras condições, ajudando a prevenir superaquecimento e danos, pois transformam dados brutos em informações acionáveis, melhorando a tomadas de decisões.
+
+### Nosso Objetivo
+Queremos mudar o mindset das novas gerações, para que estas possam mudar o mundo: esse é o propósito do nosso projeto que tem como missão informar e alertar sobre os perigos de negligenciar o Oceano. Cuidar deste é o nosso dever como ser humano. O nosso projeto consiste em uma plataforma de informações com artigos, informações e um dashboard de monitoramento, no qual será demonstrado medições feitas através de sensores, informando em tempo real dados sobre o Ph da água e  a temperatura. 
 
 ## Simulação
 <a href="https://wokwi.com/projects/399438925654312961" target="_blank" style="text-decoration: none">
